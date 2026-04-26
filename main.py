@@ -16,7 +16,7 @@ async def telegram_webhook(req: Request):
         chat_id = data["message"]["chat"]["id"]
         user_text = data["message"].get("text", "")
 
-        respuesta = consultar_ia(user_text)
+        respuesta = respuesta = "Hola, estoy funcionando"
         enviar_mensaje(chat_id, respuesta)
 
     return {"ok": True}
