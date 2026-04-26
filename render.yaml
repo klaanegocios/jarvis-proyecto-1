@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: Jarvis - Proyecto 1
+    env: python
+    buildCommand: ""
+    startCommand: "uvicorn main:app --host 0.0.0.0 --port 10000"
+TELEGRAM_TOKEN=8614531507:AAGrN7ifHm6biXEs4h4SOKcggZhWFlbgQE0
+OPENROUTER_API_KEY=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
