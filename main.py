@@ -37,7 +37,7 @@ def consultar_ia(texto):
     }
 
     payload = {
-        "model": "mistralai/mistral-7b-instruct",
+        "model": "openchat/openchat-7b",
         "messages": [
             {"role": "system", "content": "Sos un asistente tipo JARVIS, directo, preciso y profesional."},
             {"role": "user", "content": texto}
