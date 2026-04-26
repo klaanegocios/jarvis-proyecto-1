@@ -29,7 +29,7 @@ async def telegram_webhook(req: Request):
 
 
 def consultar_ia(texto):
-    url = "https://openrouter.ai/api/v1/chat/completions"
+    url = "https://api.openai.com/v1/chat/completions"
 
     headers = {
         "Authorization": f"Bearer {OPENROUTER_API_KEY}",
@@ -37,16 +37,15 @@ def consultar_ia(texto):
     }
 
     payload = {
-        "model": "openchat/openchat-7b",
+        "model": "gpt-3.5-turbo",
         "messages": [
-            {"role": "system", "content": "Sos un asistente tipo JARVIS, directo, preciso y profesional."},
+            {"role": "system", "content": "Sos un asistente tipo JARVIS, directo y claro."},
             {"role": "user", "content": texto}
         ]
     }
 
     r = requests.post(url, headers=headers, json=payload)
-    
-    # control de errores
+
     if r.status_code != 200:
         print("Error API:", r.text)
         return "La IA no respondió correctamente"
