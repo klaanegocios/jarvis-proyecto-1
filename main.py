@@ -7,7 +7,7 @@ app = FastAPI()
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 
-@app.post("/")
+@app.post("/webhook")
 async def telegram_webhook(req: Request):
     data = await req.json()
 
